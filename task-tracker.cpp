@@ -1,5 +1,19 @@
 #include <iostream>
-#include <string>
+#include <fstream>
+#include <chrono>
+#include <ctime>    
+#include <time.h>
+#include <string.h>
+#include <ctime>
+class Task{
+    public:
+        int id;
+        std::string description;
+        std::string status;
+        std::time_t createdAt;
+        std::time_t updatedAt;
+};
+
 
 int main(int argc, char* argv[]) {
     // argc = argument count (includes program name)
