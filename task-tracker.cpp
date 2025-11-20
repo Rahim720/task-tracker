@@ -14,6 +14,25 @@ class Task{
         std::time_t updatedAt;
 };
 
+void writeTaskToFile(const Task& task) {
+    std::ofstream file("tasks.txt", std::ios::app);
+
+    if (!file.is_open()) {
+        std::cout << "ERROR: Could not open tasks.txt" << std::endl;
+        return;
+    }
+
+    file << task.id << "|"
+         << task.description << "|"
+         << task.status << "|"
+         << task.createdAt << "|"
+         << task.updatedAt << std::endl;
+
+    file.close();
+
+    std::cout << "✓ Task " << task.id << " saved to file!" << std::endl; 
+};
+
 
 int main(int argc, char* argv[]) {
     // argc = argument count (includes program name)
